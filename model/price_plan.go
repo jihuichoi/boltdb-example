@@ -7,14 +7,13 @@ import (
 )
 
 type Price struct {
-	PriceByHour PriceByHour
-	BasicPrice  int64
+	PriceByHours map[string]PriceByHour
+	BasicPrice   float64
 }
 
 type PriceByHour struct {
-	Time      int64
 	LoadType  string
-	UnitPrice int64
+	UnitPrice float64
 }
 
 func AddPrice(db *bolt.DB, bucket string, key string, price Price) error {

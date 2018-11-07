@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/zupzup/boltdb-example/db"
-	"github.com/zupzup/boltdb-example/handler"
+	"github.com/jihuichoi/boltdb-example/db"
+	"github.com/jihuichoi/boltdb-example/handler"
 	"log"
 )
 

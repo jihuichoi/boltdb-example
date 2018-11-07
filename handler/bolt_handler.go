@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"github.com/boltdb/bolt"
 
-	"github.com/zupzup/boltdb-example/model"
+	"github.com/jihuichoi/boltdb-example/model"
+	"log"
 )
 
 func ABC(db *bolt.DB) {
@@ -19,16 +20,8 @@ func ABC(db *bolt.DB) {
 		return nil
 	})
 
-	price := model.Price{BasicPrice: 100}}
-	aa := model.PriceByHour{LoadType: "경부하", UnitPrice: 50, Time: 10}
-	price.PriceByHour = append(price.PriceByHour, newPrice)
-
-	err = model.AddPrice(db, bucket, "11", price)
-	if err != nil {
-		log.Fatal(err)
-	}
-	price = model.Price{PriceByHour: model.PriceByHour{LoadType: "경부하", UnitPrice: 50, Time: 10}, BasicPrice: 100}
-	err = model.AddPrice(db, bucket, "12", price)
+	price := model.Price{PriceByHour: model.PriceByHour{LoadType: "경부하", UnitPrice: 50, Time: 10}, BasicPrice: 100}
+	err = model.AddPrice(db, bucket, "13", price)
 	if err != nil {
 		log.Fatal(err)
 	}

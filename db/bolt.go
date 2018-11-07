@@ -24,24 +24,24 @@ func SetupDB() (*bolt.DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("could not open db, %v", err)
 	}
-	err = db.Update(func(tx *bolt.Tx) error {
-		root, err := tx.CreateBucketIfNotExists([]byte("DB"))
-		if err != nil {
-			return fmt.Errorf("could not create root bucket: %v", err)
-		}
-		_, err = root.CreateBucketIfNotExists([]byte("WEIGHT"))
-		if err != nil {
-			return fmt.Errorf("could not create weight bucket: %v", err)
-		}
-		_, err = root.CreateBucketIfNotExists([]byte("ENTRIES"))
-		if err != nil {
-			return fmt.Errorf("could not create days bucket: %v", err)
-		}
-		return nil
-	})
-	if err != nil {
-		return nil, fmt.Errorf("could not set up buckets, %v", err)
-	}
+	// err = db.Update(func(tx *bolt.Tx) error {
+	// 	root, err := tx.CreateBucketIfNotExists([]byte("DB"))
+	// 	if err != nil {
+	// 		return fmt.Errorf("could not create root bucket: %v", err)
+	// 	}
+	// 	_, err = root.CreateBucketIfNotExists([]byte("WEIGHT"))
+	// 	if err != nil {
+	// 		return fmt.Errorf("could not create weight bucket: %v", err)
+	// 	}
+	// 	_, err = root.CreateBucketIfNotExists([]byte("ENTRIES"))
+	// 	if err != nil {
+	// 		return fmt.Errorf("could not create days bucket: %v", err)
+	// 	}
+	// 	return nil
+	// })
+	// if err != nil {
+	// 	return nil, fmt.Errorf("could not set up buckets, %v", err)
+	// }
 	fmt.Println("DB Setup Done")
 	return db, nil
 }

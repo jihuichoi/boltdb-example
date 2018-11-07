@@ -7,8 +7,8 @@ import (
 )
 
 type Price struct {
-	PriceByHours []PriceByHour
-	BasicPrice   int64
+	PriceByHour PriceByHour
+	BasicPrice  int64
 }
 
 type PriceByHour struct {

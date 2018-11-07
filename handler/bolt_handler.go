@@ -2,7 +2,7 @@ package handler
 
 import (
 	"fmt"
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 
 	"github.com/jihuichoi/boltdb-example/model"
 	"log"

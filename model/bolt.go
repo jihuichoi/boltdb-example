@@ -3,7 +3,7 @@ package model
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/boltdb/bolt"
+	"go.etcd.io/bbolt"
 	"time"
 )
 
